@@ -23,7 +23,7 @@ public class Biblioteka implements BibliotekaInterfejs {
 	public void obrisiKnjigu(Knjiga knjiga) {
 		
 		if (knjiga==null || !knjige.contains(knjiga) )
-			throw new RuntimeException("Knjiga ne sme biti null i  mora postojati u biblioteci);
+			throw new RuntimeException("Knjiga ne sme biti null i  mora postojati u biblioteci");
 		knjige.remove(knjiga);
 	}
 
