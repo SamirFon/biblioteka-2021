@@ -15,6 +15,7 @@ public class Biblioteka implements BibliotekaInterfejs {
 	@Override
 	public void dodajKnjigu(Knjiga knjiga) {
 
+		// nepotreban komentar 2
 		if (knjiga==null)
 		throw new NullPointerException("Knjiga ne sme biti null");
 		if (knjige.contains(knjiga))
