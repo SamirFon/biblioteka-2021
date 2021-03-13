@@ -7,7 +7,7 @@ import javax.management.RuntimeErrorException;
 import biblioteka.interfejs.BibliotekaInterfejs;
 
 public class Biblioteka implements BibliotekaInterfejs {
-// privatna lista sa svim knjigama u biblioteci
+
 	private LinkedList<Knjiga> knjige = new LinkedList<Knjiga>();
 	
 	
@@ -17,7 +17,7 @@ public class Biblioteka implements BibliotekaInterfejs {
 
 		// nepotreban komentar 2
 		if (knjiga==null)
-		throw new NullPointerException("Knjiga ne sme biti null");
+			throw new NullPointerException("Knjiga ne sme biti null");
 		if (knjige.contains(knjiga))
 			throw new RuntimeException("Knjiga vec postoji");
 		knjige.add(knjiga);
