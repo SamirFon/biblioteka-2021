@@ -9,34 +9,34 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-class AutorTest {
+class AutorTest1 {
 	
 	Autor a;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		 a = new Autor();
+		a = new Autor();
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		a=null;
+		
+		a = null;
 	}
 
 	@Test
 	void testAutorStringString() {
-		a = new Autor();
-		assertNotNull(a);
-		assertEquals("Mika", a.getIme());
-		assertEquals("Mikic", a.getPrezime());
+	a = new Autor("Mika", "Mikic");
+	
+	assertNotNull(a);
+	assertEquals("Mika", a.getIme());
+	assertEquals("Mikic", a.getPrezime());
 	}
 
 	@Test
 	void testAutor() {
-		a= new Autor();
-		
+		a=new Autor();
 		assertNotNull(a);
-		
 	}
 
 	@Test
@@ -44,41 +44,52 @@ class AutorTest {
 		a.setIme("Pera");
 		
 		assertEquals("Pera", a.getIme());
-		
 	}
-		@Test
-		@DisplayName("Testira se null ")
-		void testSetImeNull () {
-			assertThrows(java.lang.NullPointerException.class,	() -> a.setIme(null));
-		}
+	@Test
+	@DisplayName("Testira ako je uneto ime umesot null")
+	void testSetImeNull() {
 	
 
-		@Test
-		void testSetImeKratakString () {
-		
-			assertThrows(java.lang.RuntimeException.class,	() -> a.setIme("P"));
-		}
-		
+		assertThrows(java.lang.NullPointerException.class, ()-> a.setIme(null));
+	}
+	
+	@Test
+	void testSetImeKratakString() {
+	
+
+		assertThrows(java.lang.RuntimeException.class, ()-> a.setIme("p"));
+	}
+	
+	@Test
+	void testGetPrezime() {
+		fail("Not yet implemented");
+	}
+	
 	@Test
 	void testSetPrezime() {
 		a.setPrezime("Peric");
-		
 		assertEquals("Peric", a.getPrezime());
+		
+	}
+	@Test
+	void testSetPrezimeNull() {
+		assertThrows(java.lang.NullPointerException.class, ()-> a.setPrezime(null));
+		
+		
 	}
 	
 	@Test
-	void testSetPrezimeNull() {
-		assertThrows(java.lang.NullPointerException.class,	() -> a.setPrezime(null));
+	void testSetIPrezimeKratakString() {
+	
 
-		
+		assertThrows(java.lang.RuntimeException.class, ()-> a.setPrezime("p"));
 	}
-	@Test
-	void testSetPrezimeKratakString () {
-		
-		assertThrows(java.lang.RuntimeException.class,	() -> a.setPrezime("P"));
-	}
+	
+	
+
 	@Test
 	void testToString() {
+		
 		a.setIme("Zika");
 		a.setPrezime("Zikic");
 		
@@ -89,21 +100,29 @@ class AutorTest {
 	}
 
 	@ParameterizedTest
-	@CsvSource ({
+	@CsvSource({
 		"Pera, Peric, Pera, Peric, true",
-		"Pera, Zikic, Pera, Peric, false",
-		"MIka, Peric, MIka, Mikic, false",
 		
+		"Pera, Zikic, Pera, Peric, false",
+		
+		"Mika, Peric, Pera, Peric, false",
+		
+		"Pera, Peric, Mika, Mikic, false",
+		
+
+
 	})
-	void testEqualsObject(String ime1,String prezime1, String ime2,  String prezime2, boolean eq) {
+	void testEqualsObject(String ime1, String prezime1, String ime2,  String prezime2, boolean eq) {
+
 		a.setIme(ime1);
 		a.setPrezime(prezime1);
 		
-		Autor b = new Autor();
-		b.setIme(ime2);
-		b.setPrezime(prezime2);
+		Autor a1 = new  Autor();
+		a1.setIme(ime2);
+		a1.setPrezime(prezime2);
 		
-		assertEquals(eq,a.equals(b));
+		assertEquals(eq, a.equals(a1));	
+	
 	}
 
 }
