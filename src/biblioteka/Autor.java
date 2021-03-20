@@ -1,10 +1,14 @@
 package biblioteka;
 
 /**
- * Klasa koja prestavlja autora knjige
  * 
- * @version 0.1
+ * Klasa koja predstavlja autora knjige
+ * 
+ * Autor ima ime i prezime kao String vrednosti
+ * 
  * @author Korisnik
+ * @version 0.1
+ *
  *
  */
 
@@ -26,9 +30,11 @@ public class Autor {
 	
 	/**
 	 * 
-	 * Konstuktor koji inicijalizuje objekat i postavlja vrednosti za ime i prezime autora
-	 * @param ime  Ime autora kao String
-	 * @param prezime  Prezime autora kao String
+	 * konstruktor koji inicijalizuje objekat i postavlja vrednosti za ime i prezime autora
+	 * 
+	 * @param ime Ime autora kao String
+	 * @param prezime Prezime autora kao String
+	 * 
 	 */
 	
 	public Autor(String ime, String prezime) {
@@ -37,10 +43,9 @@ public class Autor {
 		setPrezime(prezime);
 	}
 	
-	
 /**
  * 
- * konstruktor koji inicijalizuje objekat i nista vise
+ * Ovaj konsturktor inicijalizuje objekat i nista vise
  */
 	public Autor() {
 		super();
@@ -50,7 +55,8 @@ public class Autor {
 /**
  * 
  * Vraca ime autora
- * @return ime autora kao String
+ * 
+ * @return  Ime autora kao String
  */
 
 	public String getIme() {
@@ -59,12 +65,14 @@ public class Autor {
 	
 	/**
 	 * 
-	 * postavlja ime autora na novu vrednost
-	 * @param ime  ime autora kao String
+	 * POstavlja ime autora na novu vresnost	
 	 * 
-	 * @throws java.lang.NullPointerException ako je uneto ime null
+	 * @param ime  Ime autora kao String
 	 * 
-	 *  @throws java.lang.RuntimeException ako je uneto ime koje ima manje od dva znaka
+	 * @throws java.lang.NullPointerException Ako je uneto ime null
+	 * 
+	 * @throws java.lang.RuntimeException ako je uneto ime koje ima manje od dva karaktera
+	 * 
 	 */
 	
 	public void setIme(String ime) {
@@ -104,8 +112,11 @@ public class Autor {
 	}
 /**
  * 
- * vraca String sa svim podacima o autoru
- * @return vraca String sa svim podacima o autoru
+ * vraca string sa svim podacima o autoru
+ * 
+ * @return vraca podatke o autoru
+ * 
+ * 
  */
 	@Override
 	public String toString() {
@@ -125,13 +136,18 @@ public class Autor {
 		return result;
 	}
 	/**
+	 * 
 	 * poredi dva autora i vraca true ako su isti i false ako su razliciti
+	 * 
 	 * autori se porede po imenu i prezimenu i oba moraju da budu ista
+	 * 
 	 * @return 
 	 * <ul>
-	 * 		<li>vraca true ako su oba objekata klase autor i imaju ista imrena i prezimena </li>
-	 *  <li>vraca false u svim ostalim slucajevima</li>
-	 *  <ul>
+	 * 
+	 * 	<li>	true ako su oba objekta klase autor i imaju ista imena i prezimena </li>
+	 * 
+	 * 		<li>   false u svim ostalim slucajevima  </li>
+	 * </ul>
 	 */
 
 	@Override

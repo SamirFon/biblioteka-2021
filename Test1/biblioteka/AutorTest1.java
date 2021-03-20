@@ -62,7 +62,6 @@ class AutorTest1 {
 	
 	@Test
 	void testGetPrezime() {
-		fail("Not yet implemented");
 	}
 	
 	@Test
