@@ -2,11 +2,25 @@ package biblioteka;
 
 import java.util.LinkedList;
 
+
+
 import javax.management.RuntimeErrorException;
 
 import biblioteka.interfejs.BibliotekaInterfejs;
 
+/**
+ * ova klasa implementira interfejs BibliotekaInterfejs i predstavlja implementaciju preko liste
+ * 
+ * @author Korisnik
+ *
+ */
+
 public class Biblioteka implements BibliotekaInterfejs {
+	
+	/**
+	 * 
+	 * lista sa svim knjigama u biblioteci
+	 */
 
 	private LinkedList<Knjiga> knjige = new LinkedList<Knjiga>();
 	
